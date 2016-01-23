@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+<html>
+   <head>
+   	<link rel="stylesheet" href="{% static 'css/cover.css' %}">
+  	
+</head>
+<body>
+  
+  <header><a href="/admin/">Admin Site</a></header>
+      
+  <article>
+    <div>
+    
+     <ul> 
+    {% for wks in workers %}
+     
+         <li><a href="/{{wks.id}}/">{{wks.first_name}} {{wks.last_name}} </li> </a>
+         
+    {% endfor %}
+    </ul>
+
+    </div>
+
+  </article>  
+</body>
+</html>
