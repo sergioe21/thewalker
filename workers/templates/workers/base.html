@@ -10,16 +10,17 @@
   <header><a href="/admin/">Admin Site</a></header>
       
   <article>
-    <div>
-      	<h1>{{ wk.first_name }} {{ wk.last_name }}</h1>
-      	<h1>Sueldo Cancelado: {{wk.paid}}</h1>
-
-    	 			 
+    <div>		 
     <ul>
-    <form action="/{{wk.id}}">
+      <li>Nombre: {{ wk.first_name }} {{ wk.last_name }}</li>
+      <li>Edad: {{wk.age}}</li>
+      <li>Sexo: {{wk.sex}}</li>
+      <li>Correo Electronico: {{wk.email}}</li>
+      <li>Sueldo Cancelado: {{wk.paid}}</li>
+      <li> <form action="/{{wk.id}}">
     	{{ wk.get_paid }}
     	<input type="submit" value="Pagar">
-
+      </li>
 	</form>
          
           

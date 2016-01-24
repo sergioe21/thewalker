@@ -10,10 +10,16 @@ class Worker(models.Model):
 		('Y','Yes'),
 		('N','No'),
 		)
+	sx = (
+		('F','Female'),
+		('M','Male'),
+		)
 
 	last_name =  models.CharField(max_length=100)
 	first_name = models.CharField(max_length=100)
-
+	age = models.CharField(max_length=3,default=1)
+	sex = models.CharField(max_length=1,choices=sx)
+	email = models.EmailField(default='s@sergioe21.com')
 	paid = models.CharField(max_length=1,choices = pp)
 
 	def __str__(self):
