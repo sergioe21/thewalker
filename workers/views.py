@@ -7,12 +7,16 @@ from .models import Worker
 
 def show(request):
 
-	return render(request,'workers/workers_list.html',{'workers':Worker.objects.all()})
+	return render(request,'workers/index.html',{'workers':Worker.objects.all()})
 
 def details(request,worker_id):
 
 	data = Worker.objects.get(pk=worker_id)
-	return HttpResponse(data.first_name)
+
+	
+	return render(request,'workers/base.html',{'wk':data})
+
+
 
 
 #class IndexListView(ListView):

@@ -1,0 +1,32 @@
+{% load staticfiles %}
+
+<HTML>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'workers/index.css'%}">
+</head>
+
+<body>
+
+	<header>
+		<h1>Base de Datos de Empleados</h1>
+
+	</header>
+	<div>
+
+		<ul>
+			{% for worker in workers %}
+
+			<a href="/{{worker.id}}"><li>{{worker.first_name}} {{worker.last_name}} </li></a>
+
+			{% endfor %}
+
+
+		</ul>
+
+
+	</div>
+
+</body>
+
+</HTML>

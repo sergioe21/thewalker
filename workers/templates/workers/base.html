@@ -1,8 +1,32 @@
+{% load staticfiles %}
 
+<html>
+   <head>
+   	<link rel="stylesheet" href="{% static 'workers/base.css' %}">
+  	<title>{{ wk.first_name }} {{ wk.last_name }}</title>
+</head>
 <body>
-
-  {% block content %}
-  {% endblock}  
   
+  <header><a href="/admin/">Admin Site</a></header>
+      
+  <article>
+    <div>
+      	<h1>{{ wk.first_name }} {{ wk.last_name }}</h1>
+      	<h1>Sueldo Cancelado: {{wk.paid}}</h1>
 
+    	 			 
+    <ul>
+    <form action="/{{wk.id}}">
+    	{{ wk.get_paid }}
+    	<input type="submit" value="Pagar">
+
+	</form>
+         
+          
+    </ul>
+
+    </div>
+
+  </article>  
 </body>
+</html>
