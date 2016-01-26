@@ -21,6 +21,7 @@ class Worker(models.Model):
 	sex = models.CharField(max_length=1,choices=sx)
 	email = models.EmailField(default='s@sergioe21.com')
 	paid = models.CharField(max_length=1,choices = pp)
+	url_background = models.CharField(max_length=500,default='http://www.vallourec-ra2013.com/assets/img/background/background-univ-petrole-degrade.png')
 
 	def __str__(self):
 
